@@ -98,7 +98,7 @@ async def incoming_message_f(client, message):
             aria_i_p = await aria_start()
             # LOGGER.info(aria_i_p)
 
-        await i_m_sefg.edit_text("Added to downloads. Send /status")
+        await i_m_sefg.edit_text("<b>Hey {u_men}\n\nYour Requested Link Added To /status</b>")
         # try to download the "link"
         is_zip = False
         is_cloud = False
@@ -278,7 +278,7 @@ async def rename_tg_file(client, message):
                 message_id = final_response[key_f_res_se]
                 channel_id = str(message.chat.id)[4:]
                 private_link = f"https://t.me/c/{channel_id}/{message_id}"
-                message_to_send += "➪ <a href='"
+                message_to_send += "🔖 <a href='"
                 message_to_send += private_link
                 message_to_send += "'>"
                 message_to_send += local_file_name
@@ -286,10 +286,10 @@ async def rename_tg_file(client, message):
                 message_to_send += "\n"
             if message_to_send != "":
                 mention_req_user = (
-                    f"<a href='tg://user?id={usr_id}'>🐈 Hey Bru!! Your Requested Files 👇</a>\n\n"
+                    f"<a href='tg://user?id={usr_id}'>**Hey {u_men} Your Requested Files 👇**</a>\n\n"
                 )
                 message_to_send = mention_req_user + message_to_send
-                message_to_send = message_to_send + "\n\n" + "<b> #UPLOADS\n\n💫 Powered By : @TGFilmZone</b>"
+                message_to_send = message_to_send + "\n\n" + "<b> #UploadCompleted\n\n💫 Made By : @KristyCloud</b>"
             else:
                 message_to_send = "<i>FAILED</i> to upload files. 😞😞"
             await message.reply_text(
