@@ -79,20 +79,20 @@ async def status_message_f(
             if file.status == "active":
                 is_file = file.seeder
                 if is_file is None:
-                    msgg = f"<b>Conn:</b> {file.connections}"
+                    msgg = f"<b>Conn : {file.connections}</b>"
                 else:
-                    msgg = f"<b>Peers:</b> {file.connections} | <b>Seeders:</b> {file.num_seeders}"
+                    msgg = f"<b>Peers : {file.connections} || Seeders : {file.num_seeders}</b>"
 
                 percentage = int(file.progress_string(0).split('%')[0])
                 prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(20 - math.floor(percentage / 5))]))
-                msg += f"<b>════════════════════════════════</b>\n"
+                msg += f"<b>═══════ @KristyCloud ═══════</b>\n"
                 msg += f"\n<b>{downloading_dir_name}</b>"
                 msg += f"\n<b>{prog}</b>"
-                msg += f"\n<b>Speed</b>: {file.download_speed_string()}"
-                msg += f"\n<b>Status</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
-                msg += f"\n<b>ETA:</b> {file.eta_string()}"
+                msg += f"\n<b>Speed : {file.download_speed_string()}</b>"
+                msg += f"\n<b>Status : {file.progress_string()} <b>of</b> {file.total_length_string()}</b>"
+                msg += f"\n<b>ETA : {file.eta_string()}</b>"
                 msg += f"\n{msgg}"
-                msg += f"\n<b>To Cancel:</b> <code>/cancel {file.gid}</code>"
+                msg += f"\n<b>To Cancel : /cancel {file.gid}</b>"
                 msg += "\n"
 
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
@@ -104,12 +104,12 @@ async def status_message_f(
         free = humanbytes(free)
 
         ms_g = (
-            f"<b>Bot Uptime</b>: <code>{hr} : {mi} : {se}</code>\n"
-            f"<b>T:</b> <code>{total}</code> <b>U:</b> <code>{used}</code> <b>F:</b> <code>{free}</code>\n"
-            f"<b>RAM:</b> <code>{ram}%</code> <b>CPU:</b> <code>{cpu}%</code>\n"
+            f"<b>Uptime : {hr} : {mi} : {se}</b>\n"
+            f"<b>Total Disk Space : {total} || Used : {used} || Free : {free}</b>\n"
+            f"<b>RAM : {ram% || CPU : {cpu}%</b>\n"
         )
         if msg == "":
-            msg = "🤷‍♂️ No Active, Queued or Paused TORRENTs"
+            msg = "**🤷‍♂️ No Active, Queued or Paused TORRENTS**"
             msg = ms_g + "\n" + msg
             await to_edit.edit(msg)
             break
