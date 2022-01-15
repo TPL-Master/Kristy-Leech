@@ -106,7 +106,7 @@ async def status_message_f(
         ms_g = (
             f"<b>Uptime : {hr} : {mi} : {se}</b>\n"
             f"<b>Total Disk Space : {total} || Used : {used} || Free : {free}</b>\n"
-            f"<b>RAM : {ram% || CPU : {cpu}%</b>\n"
+            f"<b>RAM : {ram}% || CPU : {cpu}%</b>\n"
         )
         if msg == "":
             msg = "**🤷‍♂️ No Active, Queued or Paused TORRENTS**"
